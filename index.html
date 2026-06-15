@@ -10,7 +10,7 @@
 
 <img src="Screenshot_20260524-083720.WhatsApp~2.jpg" style="width:300px; display:block; margin:auto;">
 
-<br>
+<br><br>
 
 İki adımda yorulursun  
 Çıkamazsın yokuş
@@ -23,6 +23,40 @@ Mega şovalyelere kavuş
 
 Sen ne mal insansın  
 Siyavuş Siyavuş
+
+<br><br>
+
+<h2>Siyavuş mal mı?</h2>
+
+<button id="evet">Evet</button>
+<button id="hayir">Hayır</button>
+
+<script>
+const evet = document.getElementById("evet");
+const hayir = document.getElementById("hayir");
+
+// butonları kaçır
+evet.style.position = "absolute";
+hayir.style.position = "absolute";
+
+function moveButtons() {
+    evet.style.left = Math.random() * (window.innerWidth - 100) + "px";
+    evet.style.top = Math.random() * (window.innerHeight - 50) + "px";
+
+    hayir.style.left = Math.random() * (window.innerWidth - 100) + "px";
+    hayir.style.top = Math.random() * (window.innerHeight - 50) + "px";
+}
+
+setInterval(moveButtons, 200);
+
+// aynı sonuç
+function showResult() {
+    alert("Doğru cevap: Siyavuş tam bir mal 😎");
+}
+
+evet.onclick = showResult;
+hayir.onclick = showResult;
+</script>
 
 </body>
 </html>
