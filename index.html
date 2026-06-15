@@ -9,6 +9,11 @@
       font-family:Arial;
     }
 
+    .poem {
+      white-space:pre-line;
+      margin-top:20px;
+    }
+
     .container {
       display:flex;
       justify-content:center;
@@ -29,7 +34,7 @@
 
 <img src="Screenshot_20260524-083720.WhatsApp~2.jpg" style="width:300px; display:block; margin:auto;">
 
-<br>
+<div class="poem">
 
 İki adımda yorulursun  
 Çıkamazsın yokuş
@@ -43,7 +48,9 @@ Mega şovalyelere kavuş
 Sen ne mal insansın  
 Siyavuş Siyavuş
 
-<br><br>
+</div>
+
+<br>
 
 <h2>Siyavuş mal mı?</h2>
 
@@ -59,7 +66,6 @@ const hayir = document.getElementById("hayir");
 function swap() {
   const parent = evet.parentNode;
 
-  // yer değiştir
   if (parent.children[0] === evet) {
     parent.insertBefore(hayir, evet);
   } else {
@@ -67,10 +73,10 @@ function swap() {
   }
 }
 
-setInterval(swap, 500);
+setInterval(swap, 600);
 
 function result() {
-  alert("Doğru cevap: Siyavuş tam bir mal 😎");
+  alert("Bu cevaba göre Siyavuş kesinlikle bir mal 😎");
 }
 
 evet.onclick = result;
