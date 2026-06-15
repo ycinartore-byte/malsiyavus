@@ -75,12 +75,15 @@ function swap() {
 
 setInterval(swap, 600);
 
-function result() {
-  alert("Bu cevaba göre Siyavuş kesinlikle bir mal 😎");
-}
+// Evet tıklanınca
+evet.onclick = function () {
+  alert("Doğru cevap: Siyavuş kesinlikle bir mal 😎");
+};
 
-evet.onclick = result;
-hayir.onclick = result;
+// Hayır tıklanınca
+hayir.onclick = function () {
+  alert("Yanlış cevap, cevabı veren kişi kesinlikle bir mal 😎");
+};
 </script>
 
 </body>
