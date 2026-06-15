@@ -2,15 +2,34 @@
 <html>
 <head>
   <title>Malsiyavuş</title>
+
+  <style>
+    body {
+      text-align:center;
+      font-family:Arial;
+    }
+
+    .container {
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      margin-top:20px;
+    }
+
+    button {
+      padding:10px 20px;
+      font-size:18px;
+    }
+  </style>
 </head>
 
-<body style="text-align:center; font-family:Arial; white-space:pre-line;">
+<body>
 
 <h1>Malsiyavuş</h1>
 
 <img src="Screenshot_20260524-083720.WhatsApp~2.jpg" style="width:300px; display:block; margin:auto;">
 
-<br><br>
+<br>
 
 İki adımda yorulursun  
 Çıkamazsın yokuş
@@ -28,34 +47,34 @@ Siyavuş Siyavuş
 
 <h2>Siyavuş mal mı?</h2>
 
-<button id="evet">Evet</button>
-<button id="hayir">Hayır</button>
+<div class="container">
+  <button id="evet">Evet</button>
+  <button id="hayir">Hayır</button>
+</div>
 
 <script>
 const evet = document.getElementById("evet");
 const hayir = document.getElementById("hayir");
 
-// butonları kaçır
-evet.style.position = "absolute";
-hayir.style.position = "absolute";
+function swap() {
+  const parent = evet.parentNode;
 
-function moveButtons() {
-    evet.style.left = Math.random() * (window.innerWidth - 100) + "px";
-    evet.style.top = Math.random() * (window.innerHeight - 50) + "px";
-
-    hayir.style.left = Math.random() * (window.innerWidth - 100) + "px";
-    hayir.style.top = Math.random() * (window.innerHeight - 50) + "px";
+  // yer değiştir
+  if (parent.children[0] === evet) {
+    parent.insertBefore(hayir, evet);
+  } else {
+    parent.insertBefore(evet, hayir);
+  }
 }
 
-setInterval(moveButtons, 200);
+setInterval(swap, 500);
 
-// aynı sonuç
-function showResult() {
-    alert("Doğru cevap: Siyavuş tam bir mal 😎");
+function result() {
+  alert("Doğru cevap: Siyavuş tam bir mal 😎");
 }
 
-evet.onclick = showResult;
-hayir.onclick = showResult;
+evet.onclick = result;
+hayir.onclick = result;
 </script>
 
 </body>
